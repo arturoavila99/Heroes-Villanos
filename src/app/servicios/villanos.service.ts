@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Heroe} from "./heroes.service";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class VillanosService {
   private villanos: Villano [] = [
     {
       nombre: "Flash Reverso",
-      bio: "El gran y clásico villano de la mitología de Flash, este tipo tiene los poderes de la Fuerza de la Velocidad además de la capacidad de negar la conexión con dicha fuerza a otro usuario. <br>Teniendo en cuenta que tiene el mismo poder y el mismo peligro que Barry Allen a la hora de transformar la realidad, pero además tiene cierta inclinación para llevar a cabo dicha transformación... ¡Flash Reverso es uno de los villanos más poderosos y peligrosos de todo el Universo DC, capaz de destruir todo aquello que conoces a golpe de velocidad y en un breve pestañeo!",
+      bio: "El gran y clásico villano de la mitología de Flash, este tipo tiene los poderes de la Fuerza de la Velocidad además de la capacidad de negar la conexión con dicha fuerza a otro usuario. Teniendo en cuenta que tiene el mismo poder y el mismo peligro que Barry Allen a la hora de transformar la realidad, pero además tiene cierta inclinación para llevar a cabo dicha transformación... ¡Flash Reverso es uno de los villanos más poderosos y peligrosos de todo el Universo DC, capaz de destruir todo aquello que conoces a golpe de velocidad y en un breve pestañeo!",
       img:"assets/img/FlashReverso.png" ,
       aparicion: "1963-09",
       casa: "DC",
@@ -72,8 +73,25 @@ export class VillanosService {
   ]
 
   constructor() { }
+
   getVillanos():Villano[]{
     return this.villanos;
+  }
+  getVillano( idx: number){
+    return this.villanos[idx];
+  }
+  buscarVillano( termino: string): Villano[]{
+    let villanoArr: Villano[] = [];
+    termino = termino.toLowerCase();
+    for (let index = 0; index < this.villanos.length; index++) {
+      let villano = this.villanos[index];
+      let nombre = villano.nombre.toLowerCase();
+      if( nombre.indexOf(termino) >=0 ){
+        villano.idx = index;
+        villanoArr.push(villano);
+      }
+    }
+    return villanoArr;
   }
 }
 

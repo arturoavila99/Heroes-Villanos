@@ -19,6 +19,7 @@ import { HeroeComponent } from './components/heroe/heroe.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { VillanosComponent } from './components/villanos/villanos.component';
 import { VillanosTarjetaComponent } from './components/villanos-tarjeta/villanos-tarjeta.component';
+import { VillanoComponent } from './components/villano/villano.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { VillanosTarjetaComponent } from './components/villanos-tarjeta/villanos
     HeroeComponent,
     BuscadorComponent,
     VillanosComponent,
-    VillanosTarjetaComponent
+    VillanosTarjetaComponent,
+    VillanoComponent
   ],
   imports: [
     BrowserModule,

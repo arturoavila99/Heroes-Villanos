@@ -1,5 +1,5 @@
-<div class="card animated fadeIn fast">
-    <img class="card-img-top img-fluid" [src]="villano.img" [alt]="villano.nombre">
+<div class="card animated fadeIn fast" >
+    <img style="height:468px ;width:452px " class="card-img-top img-fluid" [src]="villano.img" [alt]="villano.nombre">
     <div class="card-body">
         <h4 class="card-title"> {{ villano.nombre }} </h4>
         <p class="card-text">
@@ -10,8 +10,9 @@
                 {{villano.aparicion}}
             </small>
         </p>
-        <!-- <button (click)="verheroe()" type="button" class="btn btn-outline-primary btn-block">
+          <button (click)="verVillano()" type="button" class="btn btn-outline-primary btn-block">
             Ver mas...
-        </button> -->
+        </button>
     </div>
-</div> 
+</div>
+
